@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras com Chart.js</title>
+    <!-- Incluindo a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Canvas onde o gráfico será renderizado -->
+    <canvas id="bar-chart" width="800" height="450"></canvas>
+    <script>
+        // Criando o gráfico de barras
+        new Chart(document.getElementById("bar-chart"), {
+            // Tipo de gráfico: barra
+            type: 'bar',
+            // Dados do gráfico
+            data: {
+                // Rótulos para as barras
+                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                // Conjuntos de dados
+                datasets: [{
+                    // Rótulo do conjunto de dados
+                    label: "Population (millions)",
+                    // Cores de fundo das barras
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                    // Dados das barras
+                    data: [2478, 5267, 734, 784, 433]
+                }]
+            },
+            // Opções do gráfico
+            options: {
+                // Configurações da legenda
+                legend: {
+                    display: false
+                },
+                // Configurações do título
+                title: {
+                    // Exibir o título
+                    display: true,
+                    // Texto do título
+                    text: 'Predicted world population (millions) in 2050'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
